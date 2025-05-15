@@ -96,13 +96,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 
 ---
-
-### Add this to your `README.md`
-
-1. Copy the content above.
-2. Open your `README.md` file in a text editor (VSCode, Notepad++, etc.).
-3. Paste the content into it.
-4. Save the file.
-
-Let me know if you'd like me to add or adjust anything else in the README!
-```
