@@ -1,15 +1,14 @@
-```markdown
 # Obsidian-to-Blog: CI/CD Blog Pipeline with Hugo + GitHub + Raspberry Pi
 
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions)
 ![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberry-pi)
 
-This project sets up an automated CI/CD pipeline for a personal blog using **Obsidian**, **Hugo**, **GitHub Actions**, and **Raspberry Pi**. Write in Obsidian, sync to GitHub, and automatically deploy to your self-hosted Raspberry Pi.
+This project sets up an automated CI/CD pipeline for a personal blog using **Obsidian**, **Hugo**, **GitHub Actions**, and **Raspberry Pi**.
 
 ## Table of Contents
 - [Project Overview](#-project-overview)
-- [Tools Used](#-tools-used)
+- [Tools Used](#%EF%B8%8F-tools-used)
 - [Folder Structure](#folder-structure)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Getting Started](#-getting-started)
@@ -106,5 +105,3 @@ obsidian-blog-pipeline/
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
