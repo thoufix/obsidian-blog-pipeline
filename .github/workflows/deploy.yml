@@ -1,33 +1,31 @@
-name: Deploy Hugo Blog to Pilab
+name: Deploy to Raspberry Pi
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'content/**'
+      - 'hugo-site/**'
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
+  build-and-deploy:
+    runs-on: self-hosted
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.121.1'
+          submodules: true
+          fetch-depth: 0
 
-      - name: Build site
+      - name: Build site with Hugo
         run: |
           cd hugo-site
           hugo --minify
 
-      - name: Deploy to Raspberry Pi via SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Deploy to web directory
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          rsync -avz -e "ssh -o StrictHostKeyChecking=no" hugo-site/public/ pi@10.1.1.1:/var/www/html/
+          # Copy built site to web server directory
+          sudo cp -r hugo-site/public/* /var/www/hugo-site/
+          sudo chown -R www-data:www-data /var/www/hugo-site/
+          echo "Deployment complete!"
