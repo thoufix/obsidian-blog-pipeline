@@ -1,3 +1,22 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+cat > ~/obsidian-blog-pipeline/hugo-site/hugo.toml << 'EOF'
+baseURL = "http://10.1.1.118/"
+languageCode = "en-us"
+title = "Jurassic Pipelines"
+theme = "terminal"
+
+[params]
+  contentTypeName = "posts"
+  themeColor = "orange"
+  showMenuItems = 2
+  fullWidthTheme = false
+  centerTheme = false
+
+  [params.logo]
+    logoText = "$ cd ~/blog"
+    logoHomeLink = "/"
+
+[module]
+  [[module.mounts]]
+    source = "../content"
+    target = "content"
+EOF
