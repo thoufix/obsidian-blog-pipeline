@@ -1,0 +1,7 @@
+---
+title: "My First Blog Post"
+date: 2025-05-24
+draft: false
+---
+
+Hello, this is my first blog post in Hugo.
