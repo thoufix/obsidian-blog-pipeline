@@ -1,4 +1,3 @@
-cat > ~/obsidian-blog-pipeline/hugo-site/hugo.toml << 'EOF'
 baseURL = "http://10.1.1.118/"
 languageCode = "en-us"
 title = "Jurassic Pipelines"
@@ -19,4 +18,3 @@ theme = "terminal"
   [[module.mounts]]
     source = "../content"
     target = "content"
-EOF
