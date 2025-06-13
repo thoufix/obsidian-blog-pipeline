@@ -21,11 +21,12 @@ jobs:
       - name: Build site with Hugo
         run: |
           cd hugo-site
-          hugo --minify
+          hugo --minify --environment production
 
       - name: Deploy to web directory
         run: |
-          # Copy built site to web server directory
-          sudo cp -r hugo-site/public/* /var/www/hugo-site/
-          sudo chown -R www-data:www-data /var/www/hugo-site/
-          echo "Deployment complete!"
+          # Remove old files and copy new build
+          sudo rm -rf /var/www/blog/public/*
+          sudo cp -r hugo-site/public/* /var/www/blog/public/
+          sudo chown -R www-data:www-data /var/www/blog/
+          echo "Deployment complete to /var/www/blog/public/!"
