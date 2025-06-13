@@ -21,7 +21,7 @@ jobs:
       - name: Build site with Hugo
         run: |
           cd hugo-site
-          hugo --minify --environment production
+          hugo --minify --environment production --baseURL "http://10.1.1.118"
 
       - name: Deploy to web directory
         run: |
