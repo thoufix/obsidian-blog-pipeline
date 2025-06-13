@@ -1,7 +1,8 @@
-baseURL = "http://10.1.1.118/"
+baseURL = 'http://10.1.1.118'
 languageCode = "en-us"
 title = "Jurassic Pipelines"
 theme = "terminal"
+relativeURLs = true
 
 [params]
   contentTypeName = "posts"
