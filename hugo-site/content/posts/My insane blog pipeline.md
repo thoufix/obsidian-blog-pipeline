@@ -61,7 +61,4 @@ robocopy "C:\Users\AI\Documents\Obsidian Vault\posts" "\\192.168.1.106\HugoPosts
 
 
 
-images are not reflecting 
-
-
-animals 
+images are not reflecting and animals are not there 
