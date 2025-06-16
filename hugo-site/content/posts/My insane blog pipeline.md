@@ -1,10 +1,10 @@
 ---
-title: The Timeless Fascination with Time Travel
-date: 2024-12-02
+title: "The Timeless Fascination with Time Travel"
+date: 2024-12-02T00:00:00-05:00
 draft: false
-tags:
-  - thoufeek
-  - blog
+tags: ["thoufeek", "blog"]
+summary: "Exploring humanity's obsession with time travel through mythology and science fiction"
+
 ---
 ## **The Timeless Fascination with Time Travel**
 
