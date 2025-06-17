@@ -1,8 +1,4 @@
-hugo-site/public/
-.DS_Store
-*.log
-
-
+cat > .gitignore << 'EOF'
 # Hugo build output
 hugo-site/public/
 
@@ -21,3 +17,10 @@ hugo-site/public/
 # Obsidian workspace files
 .obsidian/workspace*
 .obsidian/plugins/*/data.json
+
+# Theme build artifacts (prevents localhost URL issues)
+themes/*/public/
+themes/*/resources/
+hugo-site/themes/*/public/
+hugo-site/themes/*/resources/
+EOF
