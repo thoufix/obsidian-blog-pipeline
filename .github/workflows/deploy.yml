@@ -11,18 +11,19 @@ on:
 jobs:
   build-and-deploy:
     runs-on: self-hosted
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
-
+          
       - name: Build site with Hugo
         run: |
           cd hugo-site
-          hugo --minify --environment production --baseURL "http://10.1.1.118"
-
+          hugo --minify --environment production --baseURL "https://blog.pilab.tech"
+          
       - name: Deploy to web directory
         run: |
           # Remove old files and copy new build
