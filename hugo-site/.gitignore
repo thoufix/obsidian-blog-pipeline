@@ -1,0 +1,26 @@
+cat > .gitignore << 'EOF'
+# Hugo build output
+hugo-site/public/
+
+# System files
+.DS_Store
+*.log
+
+# Obsidian files - keep these out of git
+.obsidian/
+*.excalidraw
+*.excalidraw.md
+*.trash
+.obsidian.vimrc
+.hotreload
+
+# Obsidian workspace files
+.obsidian/workspace*
+.obsidian/plugins/*/data.json
+
+# Theme build artifacts (prevents localhost URL issues)
+themes/*/public/
+themes/*/resources/
+hugo-site/themes/*/public/
+hugo-site/themes/*/resources/
+EOF
