@@ -1,42 +1,110 @@
 import os
 import re
 import shutil
+from urllib.parse import quote
 
-# Paths (using raw strings to handle Windows backslashes correctly)
-posts_dir = r"C:\Users\AI\Documents\Obsidian Vault\posts"  # Your Markdown files directory
-attachments_dir = r"C:\Users\AI\Documents\Obsidian Vault"  # Your Obsidian vault directory where images are stored
-static_images_dir = r"C:\Users\AI\Documents\chuckblog\static\images"  # Hugo static images directory
+def get_platform_config():
+    """Return OS-specific configuration"""
+    if os.name == 'nt':  # Windows
+        return {
+            'posts_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\content\posts",
+            'attachments_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\content\posts",
+            'static_images_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\static\images",
+            'newline': '\n'
+        }
+    else:  # Linux (Raspberry Pi)
+        return {
+            'posts_dir': "/home/pi/obsidian-blog-pipeline/hugo-site/content/posts",
+            'attachments_dir': "/home/pi/obsidian-blog-pipeline/hugo-site/content/posts",
+            'static_images_dir': "/home/pi/obsidian-blog-pipeline/hugo-site/static/images",
+            'newline': '\n'
+        }
 
-# Ensure the static_images_dir exists
-os.makedirs(static_images_dir, exist_ok=True)
+def process_images():
+    config = get_platform_config()
+    os.makedirs(config['static_images_dir'], exist_ok=True)
 
-# Step 1: Process each markdown file in the posts directory
-for filename in os.listdir(posts_dir):
-    if filename.endswith(".md"):
-        filepath = os.path.join(posts_dir, filename)
+    print(f"Running on: {'Windows' if os.name == 'nt' else 'Raspberry Pi'}")
+    print(f"Processing markdown files in: {config['posts_dir']}")
+    print(f"Image source directory: {config['attachments_dir']}")
+    print(f"Target image directory: {config['static_images_dir']}")
+    print("-" * 50)
+
+    processed_files = 0
+    total_images = 0
+    image_patterns = [
+        (r'!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|webp|svg))\]\]', 'obsidian'),  # Obsidian style
+        (r'!\[[^\]]*\]\(([^\)]+\.(?:png|jpg|jpeg|gif|webp|svg))\)', 'markdown')  # Standard markdown
+    ]
+
+    for filename in os.listdir(config['posts_dir']):
+        if not filename.endswith(".md"):
+            continue
+            
+        filepath = os.path.join(config['posts_dir'], filename)
+        print(f"\nProcessing: {filename}")
         
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
         
-        # Step 2: Find all image links in the format [[image_name.png]]
-        images = re.findall(r'\[\[([^]]*\.png|jpe?g)\]\]', content)
+        original_content = content
+        changes_made = False
         
-        # Step 3: Replace image links and ensure URLs are correctly formatted
-        for image in images:
-            # Prepare the Markdown-compatible link
-            markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
-            content = content.replace(f"[[{image}]]", markdown_image)
-            
-            # Step 4: Copy the image to the Hugo static/images directory if it exists
-            image_source = os.path.join(attachments_dir, image)
-            if os.path.exists(image_source):
-                shutil.copy(image_source, static_images_dir)
-                print(f"Copied: {image} to {static_images_dir}")
-            else:
-                print(f"Image not found: {image_source}")
+        for pattern, pattern_type in image_patterns:
+            for match in re.finditer(pattern, content, re.IGNORECASE):
+                image = match.group(1)
+                print(f"  Found {pattern_type} image reference: {image}")
+                
+                # Handle different path formats
+                if pattern_type == 'markdown':
+                    # Extract just the filename from path
+                    image = os.path.basename(image)
+                
+                # Create Hugo-compatible link
+                encoded_image = quote(image)
+                hugo_image = f"![{image}](/images/{encoded_image})"
+                
+                # Replace based on pattern type
+                if pattern_type == 'obsidian':
+                    content = content.replace(f"![[{image}]]", hugo_image)
+                else:
+                    content = re.sub(
+                        r'!\[[^\]]*\]\(' + re.escape(image) + r'\)',
+                        hugo_image,
+                        content
+                    )
+                
+                # Copy image to static directory
+                image_source = os.path.join(config['attachments_dir'], image)
+                image_dest = os.path.join(config['static_images_dir'], image)
+                
+                if os.path.exists(image_source):
+                    try:
+                        shutil.copy2(image_source, image_dest)
+                        print(f"    ✓ Copied: {image}")
+                        total_images += 1
+                        changes_made = True
+                    except Exception as e:
+                        print(f"    ✗ Error copying {image}: {str(e)}")
+                else:
+                    print(f"    ✗ Image not found: {image_source}")
 
-        # Step 5: Write the updated content back to the markdown file
-        with open(filepath, "w", encoding="utf-8") as file:
-            file.write(content)
+        if changes_made:
+            with open(filepath, "w", encoding="utf-8", newline=config['newline']) as file:
+                file.write(content)
+            print(f"  ✓ Updated markdown file")
+            processed_files += 1
+        else:
+            print("  No image changes needed")
 
-print("Markdown files processed and images copied successfully.")
+    print("\n" + "-" * 50)
+    print(f"Processing complete!")
+    print(f"Markdown files processed: {processed_files}")
+    print(f"Images copied: {total_images}")
+    print("\nNext steps:")
+    print("1. Run 'git status' to see changes")
+    print("2. Commit and push to GitHub")
+    print("3. GitHub Actions will deploy to https://blog.pilab.tech")
+
+if __name__ == "__main__":
+    process_images()

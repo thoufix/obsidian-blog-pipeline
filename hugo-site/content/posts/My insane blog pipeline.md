@@ -54,7 +54,7 @@ Perhaps our fascination with time travel is less about changing our destiny and 
 
 hugo server --bind=0.0.0.0 --baseURL=http://192.168.1.106:1313 -t terminal
 
-![time](istockphoto-1435874519-1024x1024.jpg)]
+![istockphoto-1435874519-1024x1024.jpg](/images/istockphoto-1435874519-1024x1024.jpg)]
 
 robocopy "C:\Users\AI\Documents\Obsidian Vault\posts" "\\192.168.1.106\HugoPosts" /MIR
 
