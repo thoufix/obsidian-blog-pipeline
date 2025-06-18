@@ -1,4 +1,4 @@
 
-that's how it all started and ended nowhere
+Vintage scooters are cool; may be I'll buy one day...
 
-yes, people are worst
+![](lorenzo-gerosa-WGLULZGII0A-unsplash.jpg)
