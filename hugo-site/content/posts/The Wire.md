@@ -33,7 +33,7 @@ description: "A true family story told in Tarantino style - when a simple wire p
 
 You know what they say about family life? It's like playing Russian Roulette with happiness - most chambers are empty, but when you hit the loaded one, it fucking explodes in your face.
 
-  
+  ![istockphoto-1360548730-1024x1024.jpg](/images/istockphoto-1360548730-1024x1024.jpg)
 
 Doody sits on the edge of the bed, cradling her Dell laptop like it's a wounded soldier she's trying to bring back from the dead. Her eyes have that thousand-yard stare that wives get when their husbands do something spectacularly stupid. The kind of look that says, "I married this man, and now I have to live with the consequences."
 
