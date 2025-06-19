@@ -178,6 +178,7 @@ And then we see it.
 
 Her laptop.
 
+![](istockphoto-182470801-1024x1024%201.jpg)
   
 
 Office property.
