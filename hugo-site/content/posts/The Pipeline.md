@@ -1,26 +1,14 @@
 ---
-title: "The Pipeline"
-author: "Anonymous"
-date: 2025-06-20
-tags:
-  - horror
-  - tech-fiction
-  - stephen-king-style
-  - coding
-  - debugging
-aliases:
-  - "GitHub Horror Story"
-  - "URL Encoding Nightmare"
-category: "Short Stories"
-status: "complete"
+title: "The Pipeline Awakens"
+date: 2025-06-19
+tags: [personal, story, tech, parenting, marriage]
+series: "The Wire"
+weight: 1
 ---
-
-# The Pipeline
 
 The cursor blinked mockingly in the terminal window, a digital heartbeat that seemed to pulse with malevolent intent. Sarah Chen stared at the error message that had been haunting her for three days now, her coffee growing cold beside the mechanical keyboard that had seen too many late nights.
 
 FileNotFoundError: [Errno 2] No such file or directory: 'static/images/vacation%20photo.jpg'
-
 
 She rubbed her eyes, the fluorescent lights of the office casting everything in that sickly pale glow that made even healthy skin look corpse-like. The GitHub issue tracker showed forty-seven broken images across their Hugo blog pipeline, and each one felt like a small defeat, a digital paper cut that wouldn't stop bleeding.
 
