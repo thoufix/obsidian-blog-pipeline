@@ -1,4 +1,26 @@
 
+---
+
+title: "The Wire: A Tarantino-Style Family Thriller"
+
+date: 2024-06-19
+
+draft: false
+
+tags: ["family", "technology", "domestic-thriller", "tarantino-style"]
+
+categories: ["Stories", "Family Life"]
+
+description: "A true family story told in Tarantino style - when a simple wire pull turns into a domestic thriller involving laptops, love, and a very naughty 2-year-old."
+
+---
+
+  
+
+# The Wire: A Family Thriller
+
+  
+
 ## Part One: The Resurrection
 
 **Time:** 11:47 PM - After Everything Goes to Hell
@@ -6,6 +28,8 @@
 **Tags:** #family #technology #crisis #domestic-drama
 
 **Characters:** [[Doodie]], [[Doody]], [[Shayan]]
+
+  
 
 You know what they say about family life? It's like playing Russian Roulette with happiness - most chambers are empty, but when you hit the loaded one, it fucking explodes in your face.
 
@@ -36,11 +60,6 @@ Our two-year-old son Shayan - let me tell you about this kid. He's got the destr
   
 
 But let me back up. Let me tell you how we got here. How one innocent wire nearly destroyed a marriage, a career, and possibly my will to live.
-
-  
-
----
-
 ## Part Two: The Golden Hour
 
 **Time:** 45 Minutes Earlier - When Life Was Still Good
