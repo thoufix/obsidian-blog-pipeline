@@ -1,7 +1,7 @@
 
 ---
 
-title: "The Wire: A Tarantino-Style Family Thriller"
+title: "The Wire"
 
 date: 2024-06-19
 
