@@ -1,5 +1,4 @@
 
-
 ## Part One: The Resurrection
 
 **Time:** 11:47 PM - After Everything Goes to Hell
