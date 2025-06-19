@@ -40,30 +40,30 @@ def process_images():
     for filename in os.listdir(config['posts_dir']):
         if not filename.endswith(".md"):
             continue
-            
+
         filepath = os.path.join(config['posts_dir'], filename)
         print(f"\nProcessing: {filename}")
-        
+
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
-        
+
         original_content = content
         changes_made = False
-        
+
         for pattern, pattern_type in image_patterns:
             for match in re.finditer(pattern, content, re.IGNORECASE):
                 image = match.group(1)
                 print(f"  Found {pattern_type} image reference: {image}")
-                
+
                 # Handle different path formats
                 if pattern_type == 'markdown':
                     # Extract just the filename from path
                     image = os.path.basename(image)
-                
+
                 # Create Hugo-compatible link
                 encoded_image = quote(image)
                 hugo_image = f"![{image}](/images/{encoded_image})"
-                
+
                 # Replace based on pattern type
                 if pattern_type == 'obsidian':
                     content = content.replace(f"![[{image}]]", hugo_image)
@@ -73,11 +73,11 @@ def process_images():
                         hugo_image,
                         content
                     )
-                
+
                 # Copy image to static directory
                 image_source = os.path.join(config['attachments_dir'], image)
                 image_dest = os.path.join(config['static_images_dir'], image)
-                
+
                 if os.path.exists(image_source):
                     try:
                         shutil.copy2(image_source, image_dest)
