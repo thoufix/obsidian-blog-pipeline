@@ -31,7 +31,7 @@ description: "A true family story told in Tarantino style - when a simple wire p
 
   
 
-*Family life’s like holding a grenade with no pin — smile too long, and you forget it's still ticking.*
+Family life’s like holding a grenade with no pin — smile too long, and you forget it's still ticking.
 
   ![istockphoto-1360548730-1024x1024.jpg](/images/istockphoto-1360548730-1024x1024.jpg)
 
