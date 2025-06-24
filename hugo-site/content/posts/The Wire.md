@@ -31,7 +31,7 @@ description: "A true family story told in Tarantino style - when a simple wire p
 
   
 
-You know what they say about family life? It's like playing Russian Roulette with happiness - most chambers are empty, but when you hit the loaded one, it fucking explodes in your face.
+*Family life’s like holding a grenade with no pin — smile too long, and you forget it's still ticking.*
 
   ![istockphoto-1360548730-1024x1024.jpg](/images/istockphoto-1360548730-1024x1024.jpg)
 
@@ -541,5 +541,5 @@ The wire that nearly ended everything became the wire that reminded us what real
 
   
 
-That's family life for you. Russian Roulette with happiness, but when the empty chambers click, they sound like the most beautiful music in the world.
+That's family life for you. In the end, the trick isn’t defusing the grenade --- it’s learning to carry it without letting go.
 
