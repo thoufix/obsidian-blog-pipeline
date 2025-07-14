@@ -22,7 +22,7 @@ jobs:
       - name: Build site with Hugo
         run: |
           cd hugo-site
-          hugo --minify --environment production --baseURL "https://blog.pilab.tech"
+          hugo --minify --environment production --baseURL "https://blog.pilab.space"
           
       - name: Deploy to web directory
         run: |

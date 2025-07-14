@@ -104,7 +104,7 @@ def process_images():
     print("\nNext steps:")
     print("1. Run 'git status' to see changes")
     print("2. Commit and push to GitHub")
-    print("3. GitHub Actions will deploy to https://blog.pilab.tech")
+    print("3. GitHub Actions will deploy to https://blog.pilab.space")
 
 if __name__ == "__main__":
     process_images()

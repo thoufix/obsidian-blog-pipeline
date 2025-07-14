@@ -1,4 +1,4 @@
-baseURL = 'https://blog.pilab.tech'
+baseURL = 'https://blog.pilab.space'
 languageCode = "en-us"
 title = "Jurassic Pipelines"
 theme = "terminal"
