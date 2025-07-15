@@ -59,4 +59,3 @@
 📅 17th of Every Month:
 → Download Credit Card Statement
 → Download ACT Bill
-→ Submit both to Cognizant MyPay for reimbursement
