@@ -12,39 +12,28 @@ weight: 9999
 
 # Project architecture
 
-+----------------------------+  
-| GitHub Pages |  
-| ([https://thoufix.github.io/menu/](https://thoufix.github.io/menu/)) |  
-| - Static HTML menu table |  
-+------------+---------------+  
-|  
-| 🌐 HTTP request (axios)  
-v  
-+----------------------------+  
-| Raspberry Pi 5 |  
-| (pilab.local) |  
-+------------+---------------+  
-| 1. Node.js (bot.js) |  
-| 2. whatsapp-web.js |  
-| 3. cheerio (HTML parser) |  
-| 4. cron scheduler |  
-+------------+---------------+  
-|  
-| 📤 Sends WhatsApp message  
-v  
-+----------------------------+  
-| WhatsApp Web Client |  
-| - Linked to your number |  
-| - Works headless |  
-+----------------------------+  
-|  
-| ✅ Delivered to family  
-v  
-+----------------------------+  
-| WhatsApp Recipients |  
-| - Your number |  
-| - Wife, others |  
-+----------------------------+
+GitHub Pages (🔗 [thoufix.github.io/menu](https://thoufix.github.io/menu))
+│
+├── Hosts a static HTML menu table
+│
+▼ (🌐 HTTP request via axios)
+Raspberry Pi 5 (📍 pilab.local)
+│
+├── Node.js script (`bot.js`)
+├── Uses:
+│   ├── `whatsapp-web.js` – for WhatsApp automation
+│   ├── `cheerio` – to parse the HTML menu
+│   └── `cron` – to schedule messages (e.g. lunch, dinner)
+│
+▼ (📤 Sends formatted messages)
+WhatsApp Web Client
+│
+├── Linked to your WhatsApp account
+└── Runs headless (no visible browser)
+▼ (✅ Message delivered)
+WhatsApp Recipients
+├── You (self)
+└── Family (e.g. wife, others)
 
 ```
 
