@@ -1,6 +1,6 @@
 ---
-title: mpv.io
-date: 2025-07-18
+title: mpv.io (media player)
+date: 2025-07-10
 summary: Alternative experience from VLC
 tags:
   - mpv
