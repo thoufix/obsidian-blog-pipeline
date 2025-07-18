@@ -5,7 +5,6 @@ summary: Results of all three ways of accessing jellyfin
 series: jellyfin
 tags:
   - jellyfin
-weight:2
 ---
 
 ## System Snapshot Comparison: Full Analysis
