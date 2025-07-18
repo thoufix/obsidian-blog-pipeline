@@ -5,16 +5,10 @@ tags: [bot, messaging]
 weight: 1
 ---
 
-```
-# 📲 WhatsApp Meal Notification Bot Project
 
-A **WhatsApp Meal Notification Bot Project** running on your **Raspberry Pi 5 (pilab)**:
 
----
 
-## 🏗️ Project Architecture
-
-```
+# Project architecture
 
 +----------------------------+  
 | GitHub Pages |  
