@@ -1,12 +1,13 @@
 ---
 title: mpv.io
 date: 2025-07-18
-summary: Alternative experience from ZV
+summary: Alternative experience from VLC
 tags:
-  - jellyfin
-series: jellyfin
+  - mpv
+series: local video
 ---
 
+# Config of mpv
 
 hwdec=auto
 vo=gpu

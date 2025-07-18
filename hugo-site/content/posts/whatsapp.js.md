@@ -1,92 +1,104 @@
- **WhatsApp Meal Notification Bot Project** running on your **Raspberry Pi 5 (pilab)**:
+---
+title: "Bot experiment for whatsapp"
+date: 2025-06-19
+tags: [personal, story, tech, parenting, marriage]
+series: "The Wire"
+weight: 1
+---
+
+Here’s your entire WhatsApp Meal Notification Bot project formatted in **Obsidian Markdown**, ready to paste into your vault:
 
 ---
 
-## 🏗️ **Project Architecture**
+```markdown
+# 📲 WhatsApp Meal Notification Bot Project
+
+A **WhatsApp Meal Notification Bot Project** running on your **Raspberry Pi 5 (pilab)**:
+
+---
+
+## 🏗️ Project Architecture
 
 ```
+
++----------------------------+  
+| GitHub Pages |  
+| ([https://thoufix.github.io/menu/](https://thoufix.github.io/menu/)) |  
+| - Static HTML menu table |  
++------------+---------------+  
+|  
+| 🌐 HTTP request (axios)  
+v  
++----------------------------+  
+| Raspberry Pi 5 |  
+| (pilab.local) |  
++------------+---------------+  
+| 1. Node.js (bot.js) |  
+| 2. whatsapp-web.js |  
+| 3. cheerio (HTML parser) |  
+| 4. cron scheduler |  
++------------+---------------+  
+|  
+| 📤 Sends WhatsApp message  
+v  
++----------------------------+  
+| WhatsApp Web Client |  
+| - Linked to your number |  
+| - Works headless |  
++----------------------------+  
+|  
+| ✅ Delivered to family  
+v  
++----------------------------+  
+| WhatsApp Recipients |  
+| - Your number |  
+| - Wife, others |  
 +----------------------------+
-|        GitHub Pages       |
-|  (https://thoufix.github.io/menu/) |
-| - Static HTML menu table  |
-+------------+---------------+
-             |
-             |  🌐 HTTP request (axios)
-             v
-+----------------------------+
-|      Raspberry Pi 5       |
-|        (pilab.local)      |
-+------------+---------------+
-| 1. Node.js (bot.js)       |
-| 2. whatsapp-web.js        |
-| 3. cheerio (HTML parser)  |
-| 4. cron scheduler         |
-+------------+---------------+
-             |
-             |  📤 Sends WhatsApp message
-             v
-+----------------------------+
-|     WhatsApp Web Client   |
-|  - Linked to your number  |
-|  - Works headless         |
-+----------------------------+
-             |
-             |  ✅ Delivered to family
-             v
-+----------------------------+
-|     WhatsApp Recipients   |
-|  - Your number            |
-|  - Wife, others           |
-+----------------------------+
+
 ```
 
 ---
 
-## 📦 **Folder Structure on Raspberry Pi**
+## 📦 Folder Structure on Raspberry Pi
 
 ```
-/home/pi/whatsapp-bot/
-│
-├── bot.js                 # Main logic (fetch + send)
-├── config.js              # (Optional) Recipient list and options
-├── package.json           # Node dependencies
-├── package-lock.json      # Version lock
-├── .wwebjs_auth/          # WhatsApp session auth data (auto created)
-├── bot.log                # Output log file from cron jobs
-└── cron jobs via `crontab -e`:
-     - send-breakfast (10:30 PM)
-     - send-lunch     (10:45 AM)
-     - send-dinner    (06:00 PM)
+
+/home/pi/whatsapp-bot/  
+│  
+├── bot.js # Main logic (fetch + send)  
+├── config.js # (Optional) Recipient list and options  
+├── package.json # Node dependencies  
+├── package-lock.json # Version lock  
+├── .wwebjs_auth/ # WhatsApp session auth data (auto created)  
+├── bot.log # Output log file from cron jobs  
+└── cron jobs via `crontab -e`:  
+- send-breakfast (10:30 PM)  
+- send-lunch (10:45 AM)  
+- send-dinner (06:00 PM)
+
 ```
 
 ---
 
-## 🔁 **Data Flow Summary**
+## 🔁 Data Flow Summary
 
 1. **Scheduled Execution**
-    
     - `cron` triggers `node bot.js send-*` at specific times.
-        
+
 2. **Menu Fetching**
-    
     - `axios` fetches HTML from GitHub Pages.
-        
     - `cheerio` parses it and extracts today's (or previous day’s) meal.
-        
+
 3. **Message Formatting**
-    
     - Bot creates a formatted WhatsApp message with emojis, time, and fallback notes.
-        
+
 4. **Message Sending**
-    
     - `whatsapp-web.js` uses a Chromium-based client to log in via your linked WhatsApp session.
-        
     - Messages are sent to all configured family numbers.
-        
 
 ---
 
-## ⚙️ **Tech Stack**
+## ⚙️ Tech Stack
 
 | Component       | Technology Used          |
 | --------------- | ------------------------ |
@@ -108,5 +120,14 @@
 | Push alerts to Telegram      | Add `node-telegram-bot-api`               |
 | Audio alerts for blind users | Use `espeak` or text-to-speech mp3 + send |
 | Offline fallback             | Cache menu or use file-based backup       |
-![](architecture.png)
+
+![[architecture.png]]
+
 ---
+```
+
+---
+
+✅ You can save this as `whatsapp-meal-bot.md` in your Obsidian vault, and make sure `architecture.png` is placed in the same folder as the note for the image to render properly in preview.
+
+Let me know if you want the same content split into smaller notes or a template version with fill-in fields.
