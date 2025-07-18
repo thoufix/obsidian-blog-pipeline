@@ -1,5 +1,5 @@
 ---
-title: Jellyfin Remote access via vps reverse proxy (caddy)
+title: "Jellyfin Remote Access"
 date: 2025-07-18
 ---
 ## Overview  
