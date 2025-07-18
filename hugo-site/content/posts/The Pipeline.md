@@ -3,7 +3,7 @@ title: "The Pipeline Awakens"
 date: 2025-06-19
 tags: [personal, story, tech, parenting, marriage]
 series: "The Wire"
-weight: 1
+weight: 6
 ---
 
 The cursor blinked mockingly in the terminal window, a digital heartbeat that seemed to pulse with malevolent intent. Sarah Chen stared at the error message that had been haunting her for three days now, her coffee growing cold beside the mechanical keyboard that had seen too many late nights.

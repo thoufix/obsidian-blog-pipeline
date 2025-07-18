@@ -5,6 +5,7 @@ summary: Ipv6 connectivity breaks
 tags:
   - OpenWrt
 series: OpenWrt
+weight: 1
 ---
 
 ## Problem Statement

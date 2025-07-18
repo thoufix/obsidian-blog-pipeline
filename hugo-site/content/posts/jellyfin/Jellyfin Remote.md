@@ -5,6 +5,7 @@ summary: Access Jellyfin from anywhere using a secure setup.
 tags:
   - jellyfin
 series: jellyfin
+weight:2
 ---
 ## Overview  
 

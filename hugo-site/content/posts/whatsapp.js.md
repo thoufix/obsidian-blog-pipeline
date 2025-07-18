@@ -3,7 +3,12 @@ title: "Automated whatsapp bot using pi"
 date: 2025-03-05
 tags: [bot, messaging]
 series: whatsapp
+weight: 9999
 ---
+
+###### This project automates WhatsApp meal messages from a GitHub page. It runs on a Raspberry Pi using Node.js and whatsapp-web.js.
+
+<!--more-->
 
 # Project architecture
 
