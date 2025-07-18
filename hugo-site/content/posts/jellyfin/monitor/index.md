@@ -1,3 +1,10 @@
+---
+title: "Jellyfin Remote Access"
+date: 2025-07-18
+slug: jellyfin-remote
+summary: "Access Jellyfin from anywhere using a secure setup."
+---
+
 ## System Snapshot Comparison: Full Analysis
 
 ## System Overview
