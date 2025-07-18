@@ -1,16 +1,11 @@
 ---
-title: "Bot experiment for whatsapp"
-date: 2025-06-19
-tags: [personal, story, tech, parenting, marriage]
-series: "The Wire"
+title: "Bot experiment on whatsapp using whatsapp.js"
+date: 2025-03-05
+tags: [bot, messaging]
 weight: 1
 ---
 
-Here’s your entire WhatsApp Meal Notification Bot project formatted in **Obsidian Markdown**, ready to paste into your vault:
-
----
-
-```markdown
+```
 # 📲 WhatsApp Meal Notification Bot Project
 
 A **WhatsApp Meal Notification Bot Project** running on your **Raspberry Pi 5 (pilab)**:
@@ -127,7 +122,3 @@ v
 ```
 
 ---
-
-✅ You can save this as `whatsapp-meal-bot.md` in your Obsidian vault, and make sure `architecture.png` is placed in the same folder as the note for the image to render properly in preview.
-
-Let me know if you want the same content split into smaller notes or a template version with fill-in fields.
