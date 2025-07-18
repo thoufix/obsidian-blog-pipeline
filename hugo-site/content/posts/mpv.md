@@ -1,3 +1,12 @@
+---
+title: mpv.io
+date: 2025-07-18
+summary: Alternative experience from ZV
+tags:
+  - jellyfin
+series: jellyfin
+---
+
 
 hwdec=auto
 vo=gpu
