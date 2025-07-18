@@ -1,4 +1,7 @@
-
+---
+title: Jellyfin Remote access via vps reverse proxy (caddy)
+date: 2025-07-18
+---
 ## Overview  
 
 This setup describes how to securely access a self-hosted **Jellyfin media server** running on a Raspberry Pi from anywhere on the internet using:
