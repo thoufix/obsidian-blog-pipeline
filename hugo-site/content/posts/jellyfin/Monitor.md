@@ -3,7 +3,7 @@ title: Monitor jellyfin speed and CPU spikes
 date: 2025-07-18
 slug: jellyfin-remote
 summary: Results of all three ways of accessing jellyfin
-series:
+series: jellyfin
 ---
 
 ## System Snapshot Comparison: Full Analysis

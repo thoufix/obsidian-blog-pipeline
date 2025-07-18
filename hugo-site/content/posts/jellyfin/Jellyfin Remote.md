@@ -5,7 +5,7 @@ slug: jellyfin-remote
 summary: Access Jellyfin from anywhere using a secure setup.
 tags:
   - tech
-aliases:
+series: jellyfin
 ---
 ## Overview  
 
