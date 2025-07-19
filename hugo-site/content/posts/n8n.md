@@ -65,4 +65,6 @@ User ↔ Telegram Bot ↔ n8n (HTTP Trigger Node) ↔ Execute Shell Command on P
 - [ ] Create Telegram bot and get token  
 - [ ] Set up n8n on pilab and expose webhook (e.g., via Tailscale/Cloudflare Tunnel)  
 - [ ] Build basic alert + command workflow  
-- [ ] Test end-to-end with simple shell script trigger 
+- [ ] Test end-to-end with simple shell script trigger
+- [ ] need to stop jellyfin and want to spin up whenever I need 
+- [ ] like that I need prowlarr and sonarr and radarr to stop and spin up whenever I need 
