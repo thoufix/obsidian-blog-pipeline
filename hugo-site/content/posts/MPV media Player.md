@@ -13,17 +13,47 @@ tags:
 ## 📄 `mpv.conf`
 
 ```ini
-hwdec=auto
-vo=gpu
-ytdl-format=bestvideo+bestaudio
-script-opts=ytdl_hook-ytdl_path=yt-dlp.exe
+# ================================
+# ▶️ Playback Settings
+# ================================
+hwdec=auto-safe          # Use safe hardware decoding
+vo=gpu                   # Use GPU video output
+profile=fast             # Fast performance profile
+hr-seek=yes              # High-resolution (accurate) seeking
 
-sub-font-size=25
-osc=no
+# ================================
+# 🔁 Caching (for smooth streaming)
+# ================================
+cache=yes                # Enable caching
+cache-secs=60            # Buffer 60 seconds ahead
 
-ytdl-format=bv*+ba/best
-hwdec=auto-safe
-profile=fast
+# ================================
+# 📺 YouTube / Streaming Settings
+# ================================
+ytdl-format=bv*+ba/best                              # Best video+audio format
+script-opts=ytdl_hook-ytdl_path=C:\\Tools\\yt-dlp\\yt-dlp.exe  # Path to yt-dlp
+
+# ================================
+# 📝 Subtitle Settings
+# ================================
+sub-font-size=25         # Subtitle font size
+sub-auto=fuzzy           # Auto-load subtitles with fuzzy match
+sub-ass-override=force   # Override embedded styling
+
+# ================================
+# 🖥️ Interface and Behavior
+# ================================
+osc=no                   # Disable on-screen controller
+save-position-on-quit    # Resume from last position
+idle=once                # Idle after playback ends, then quit
+keep-open=yes            # Keep window open after playback
+autoload-files=yes       # Automatically load similar media files
+
+# ================================
+# 🛠️ Logging and OSD
+# ================================
+log-file=~/mpv.log       # Log output to file
+osd-bar=yes              # Enable OSD progress bar
 ```
 
 - `hwdec=auto-safe`: Enables hardware decoding safely
