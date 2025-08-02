@@ -1,6 +1,6 @@
 baseURL = 'https://blog.pilab.space'
 languageCode = "en-us"
-title = "Jurassic Pipelines"
+title = "Pilab Pipelines"
 theme = "terminal"
 relativeURLs = false
 canonifyURLs = true
@@ -9,7 +9,7 @@ canonifyURLs = true
   contentTypeName = "posts"
   themeColor = "orange"
   showMenuItems = 2
-  fullWidthTheme = false
+  fullWidthTheme = true
   centerTheme = false
 
   [params.logo]
