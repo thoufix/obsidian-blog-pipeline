@@ -13,47 +13,80 @@ tags:
 ## 📄 `mpv.conf`
 
 ```ini
-# ================================
 # ▶️ Playback Settings
-# ================================
-hwdec=auto-safe          # Use safe hardware decoding
-vo=gpu                   # Use GPU video output
-profile=fast             # Fast performance profile
-hr-seek=yes              # High-resolution (accurate) seeking
+vo=gpu-next                  # Modern GPU output for better speed
+hwdec=auto-safe               # Use hardware decoding if possible
+profile=fast
+hr-seek=yes
+video-sync=display-resample
+interpolation=yes
 
 # ================================
-# 🔁 Caching (for smooth streaming)
+# 🔁 Caching
 # ================================
-cache=yes                # Enable caching
-cache-secs=60            # Buffer 60 seconds ahead
+cache=yes
+cache-secs=30
+demuxer-max-bytes=200MiB
+demuxer-max-back-bytes=50MiB
+demuxer-readahead-secs=10
+stream-buffer-size=32768
 
 # ================================
-# 📺 YouTube / Streaming Settings
+# 📺 YouTube High Quality
 # ================================
-ytdl-format=bv*+ba/best                              # Best video+audio format
-script-opts=ytdl_hook-ytdl_path=C:\\Tools\\yt-dlp\\yt-dlp.exe  # Path to yt-dlp
+ytdl-format=bestvideo[vcodec^=av01]+bestaudio/bestvideo[vcodec^=vp9]+bestaudio/best
+
+ytdl-raw-options=\
+    no-part,\
+    no-mtime,\
+    no-subs,\
+    cookies=C:\Users\AI\cookies\instagram.txt,\
+    extractor-retries=2,\
+    fragment-retries=2,\
+    http-chunk-size=1048576,\
+    format-sort=size,br,res,fps,\
+    format-sort-force=yes
+
+
+network-timeout=15
 
 # ================================
-# 📝 Subtitle Settings
+# 📝 Subtitles
 # ================================
-sub-font-size=25         # Subtitle font size
-sub-auto=fuzzy           # Auto-load subtitles with fuzzy match
-sub-ass-override=force   # Override embedded styling
+sub-auto=no
+sub-ass-override=force
+sub-font='SF Pro Display'
+sub-font-size=24
+sub-color='#FFFFFF'
+sub-border-color='#73000000'   # Black with ~45% opacity (AARRGGBB hex)
+sub-border-size=2.5
+sub-shadow-offset=0
+sub-margin-y=15
 
 # ================================
-# 🖥️ Interface and Behavior
+# 🖥️ Interface
 # ================================
-osc=no                   # Disable on-screen controller
-save-position-on-quit    # Resume from last position
-idle=once                # Idle after playback ends, then quit
-keep-open=yes            # Keep window open after playback
-autoload-files=yes       # Automatically load similar media files
+osc=no
+save-position-on-quit=yes
+idle=once
+keep-open=yes
+autoload-files=yes
+video-zoom=0
+video-unscaled=no
+keepaspect=yes
+autofit=960x540
 
 # ================================
-# 🛠️ Logging and OSD
+# 🛠️ Logging
 # ================================
-log-file=~/mpv.log       # Log output to file
-osd-bar=yes              # Enable OSD progress bar
+osd-bar=yes
+osd-on-seek=msg-bar
+osd-duration=2000
+msg-level=all=v
+
+# Cursor
+cursor-autohide=1000
+cursor-autohide-fs-only=no
 ```
 
 - `hwdec=auto-safe`: Enables hardware decoding safely
