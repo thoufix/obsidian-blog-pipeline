@@ -22,12 +22,11 @@ jobs:
       - name: Build site with Hugo
         run: |
           cd hugo-site
-          hugo --minify --environment production --baseURL "https://blog.pilab.space"
+          hugo --minify --environment production --baseURL "https://blog.pilab.space/"
           
       - name: Deploy to web directory
         run: |
-          # Remove old files and copy new build
-          sudo rm -rf /var/www/blog/public/*
-          sudo cp -r hugo-site/public/* /var/www/blog/public/
+          # Sync built site into Nginx root
+          sudo rsync -av --delete hugo-site/public/ /var/www/blog/
           sudo chown -R www-data:www-data /var/www/blog/
-          echo "Deployment complete to /var/www/blog/public/!"
+          echo "✅ Deployment complete to /var/www/blog/!"
