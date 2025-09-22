@@ -7,23 +7,24 @@ on:
     paths:
       - 'content/**'
       - 'hugo-site/**'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: self-hosted
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
-          
+
       - name: Build site with Hugo
         run: |
           cd hugo-site
           hugo --minify --environment production --baseURL "https://blog.pilab.space/"
-          
+
       - name: Deploy to web directory
         run: |
           # Sync built site into Nginx root
