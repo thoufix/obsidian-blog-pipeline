@@ -1,0 +1,14 @@
+pipeline:
+  build:
+    image: klakegg/hugo:ext-alpine
+    commands:
+      - cd hugo-site
+      - hugo --minify
+
+  deploy:
+    image: alpine
+    volumes:
+      - /srv/blog:/srv/blog
+    commands:
+      - rm -rf /srv/blog/public/*
+      - cp -r hugo-site/public/* /srv/blog/public/
