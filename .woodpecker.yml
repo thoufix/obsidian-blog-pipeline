@@ -1,6 +1,9 @@
+when:
+  event: [push, manual]
+
 steps:
   build:
-    image: gohugoio/hugo:ext-alpine
+    image: peaceiris/hugo:v0.123.0
     commands:
       - cd hugo-site
       - hugo --minify
