@@ -3,7 +3,7 @@ when:
 
 steps:
   build:
-    image: gohugoio/hugo:extended
+    image: ghcr.io/gohugoio/hugo:latest
     commands:
       - cd hugo-site
       - hugo --minify
