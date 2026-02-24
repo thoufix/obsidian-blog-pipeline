@@ -3,7 +3,7 @@ when:
 
 steps:
   build:
-    image: peaceiris/hugo:v0.123.0
+    image: gohugoio/hugo:extended
     commands:
       - cd hugo-site
       - hugo --minify
