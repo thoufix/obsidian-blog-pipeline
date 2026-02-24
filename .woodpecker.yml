@@ -1,6 +1,6 @@
 steps:
   build:
-    image: peaceiris/hugo:v0.121.1-moderndebian
+    image: klakegg/hugo:ext-alpine-arm64
     commands:
       - cd hugo-site
       - hugo --minify
