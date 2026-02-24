@@ -1,6 +1,6 @@
 steps:
   build:
-    image: klakegg/hugo:ext-alpine-arm64
+    image: gohugoio/hugo:ext-alpine
     commands:
       - cd hugo-site
       - hugo --minify
