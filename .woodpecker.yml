@@ -1,12 +1,12 @@
 steps:
   build:
-    image: klakegg/hugo:ext-alpine
+    image: peaceiris/hugo:v0.121.1-moderndebian
     commands:
       - cd hugo-site
       - hugo --minify
 
   deploy:
-    image: alpine
+    image: alpine:latest
     volumes:
       - /srv/blog:/srv/blog
     commands:
