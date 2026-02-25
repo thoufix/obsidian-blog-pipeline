@@ -1,11 +1,25 @@
 
-animal eats paper and becomes tree and tree produce paper and animal eats it and becomes tree and gives paper and animal eats it again and man saw this and eats animal and became tree 
+Animal eats paper  
+and says it has become tree.
 
+Tree makes paper  
+and calls it memory.
 
-there are people and the people 
+Animal eats memory  
+and grows heavy with it.
 
+Man eats animal  
+and says he has become more.
 
-and the people are really bad 
+He exhales.
 
+The tree takes him back  
+without asking.
 
-there are some one waiting 
+Tree makes paper.  
+Animal eats paper.  
+Man eats animal.
+
+Nothing becomes anything.  
+It only passes through  
+wearing a different name.
