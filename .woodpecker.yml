@@ -1,6 +1,3 @@
-when:
-  event: [push, manual]
-
 steps:
   build:
     image: ghcr.io/gohugoio/hugo:latest
