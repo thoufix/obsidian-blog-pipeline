@@ -6,3 +6,5 @@ terminal people
 animal people 
 
 fish people
+
+animal always there 
