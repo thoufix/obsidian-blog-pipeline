@@ -23,3 +23,5 @@ Man eats animal.
 Nothing becomes anything.  
 It only passes through  
 wearing a different name.
+
+Animal gets hungry and shouts for no reason.
