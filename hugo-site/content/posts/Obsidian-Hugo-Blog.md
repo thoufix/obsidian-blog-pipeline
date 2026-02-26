@@ -250,17 +250,11 @@ Split timers:          Enabled
 
 ---
 
-## 📌 Future Improvements
+## 📌 Definition
 
-- Pin Hugo to a specific version (avoid `latest`)
+-  A GitOps-based, ARM-native, zero-trust, Capistrano-style static release system.
     
-- Failure notifications on pipeline error
-    
-- Preview builds for PRs
-    
-
 ---
-- > A GitOps-based, ARM-native, zero-trust, Capistrano-style static release system.
 
 > **Status: Stable & Production-Ready**  
 > Last verified: 2026-02-26
