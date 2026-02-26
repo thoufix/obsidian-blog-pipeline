@@ -2,14 +2,14 @@ clone:
   git:
     image: woodpeckerci/plugin-git:latest
     settings:
-      recursive: true
-      partial: false
+      recursive: false
       depth: 0
 
 steps:
   build:
     image: ghcr.io/gohugoio/hugo:latest
     commands:
+      - git submodule update --init --recursive
       - cd hugo-site
       - hugo --minify
 
