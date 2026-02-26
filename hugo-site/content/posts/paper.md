@@ -6,7 +6,7 @@ tags:
   - reflection
 aliases:
   - The Paper
-created: 2026-02-25
+date: 2026-02-25
 updated: 2026-02-26
 ---
 
