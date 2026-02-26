@@ -1,4 +1,3 @@
-
 ---
 title: Pilab Blog Pipeline Architecture
 date: 2026-02-26
