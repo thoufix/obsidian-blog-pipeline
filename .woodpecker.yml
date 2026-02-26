@@ -10,7 +10,8 @@ steps:
     image: ghcr.io/gohugoio/hugo:latest
     commands:
       - git config --global --add safe.directory /woodpecker/src/github.com/thoufix/obsidian-blog-pipeline
-      - git submodule update --init --recursive
+      - git submodule init
+      - git submodule update --recursive || (cd hugo-site/themes/terminal && git fetch --all && git checkout cb9d8b0c9cfae43b4f82f146f7a9af332d6e47d8)
       - cd hugo-site
       - hugo --minify
 
