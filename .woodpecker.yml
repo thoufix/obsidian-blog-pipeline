@@ -2,6 +2,7 @@ steps:
   build:
     image: ghcr.io/gohugoio/hugo:latest
     commands:
+      - git submodule update --init --recursive
       - cd hugo-site
       - hugo --minify
 
