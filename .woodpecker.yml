@@ -10,17 +10,5 @@ steps:
     volumes:
       - /srv/blog:/srv/blog
     commands:
-      - export DEPLOY_TS=$(date +%Y%m%d-%H%M%S)
-      - export RELEASE_DIR=/srv/blog/releases/$DEPLOY_TS
-      - echo "Deploying to $RELEASE_DIR"
-      - mkdir -p $RELEASE_DIR
-      - cp -r hugo-site/public/* $RELEASE_DIR/
-      - |
-        if [ ! -f "$RELEASE_DIR/index.html" ]; then
-          echo "ERROR: index.html not found in build output. Aborting deploy."
-          rm -rf $RELEASE_DIR
-          exit 1
-        fi
-      - ln -sfn $RELEASE_DIR /srv/blog/current
-      - echo "Deployment successful. Current points to $RELEASE_DIR"
-      - ls -dt /srv/blog/releases/* | tail -n +6 | xargs rm -rf
+      - rm -rf /srv/blog/public/*
+      - cp -r hugo-site/public/* /srv/blog/public/
