@@ -260,6 +260,7 @@ Split timers:          Enabled
     
 
 ---
+- > A GitOps-based, ARM-native, zero-trust, Capistrano-style static release system.
 
 > **Status: Stable & Production-Ready**  
 > Last verified: 2026-02-26
