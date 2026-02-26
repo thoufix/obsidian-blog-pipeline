@@ -1,3 +1,14 @@
+---
+title: Paper
+tags:
+  - poem
+  - writing
+  - reflection
+aliases:
+  - The Paper
+created: 2026-02-26
+updated: 2026-02-26
+---
 
 Animal eats paper  
 and says it has become tree.
@@ -23,5 +34,3 @@ Man eats animal.
 Nothing becomes anything.  
 It only passes through  
 wearing a different name.
-
-Animal gets hungry and shouts for no reason.
