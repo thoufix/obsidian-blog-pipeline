@@ -8,6 +8,7 @@ test scares me.
 animal added.
 
 
-image normalization : ![](Pasted%20image%2020260228001936.png)
+image normalization : 
+![](Pasted%20image%2020260228003234.png)
 
 so updated the image for second time. 
