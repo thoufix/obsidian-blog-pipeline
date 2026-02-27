@@ -3,9 +3,3 @@ img {
   max-width: 600px !important;
   width: auto !important;
 }
-
-/* Center images in post content */
-.post-content img {
-  margin-left: auto;
-  margin-right: auto;
-}
