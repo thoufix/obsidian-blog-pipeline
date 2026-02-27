@@ -1,5 +1,7 @@
-/* Limit image max width to 600px */
+/* Limit image max width to 600px and align left */
 img {
   max-width: 600px !important;
   width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
