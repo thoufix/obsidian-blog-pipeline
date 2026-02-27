@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Automated whatsapp bot using pi"
 date: 2025-03-05
 tags: [bot, messaging]
