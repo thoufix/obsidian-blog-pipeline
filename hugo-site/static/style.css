@@ -1,10 +1,11 @@
-/* Image styling - v2 */
+/* Image styling - v3 */
 img {
   max-width: 600px !important;
   width: auto !important;
   margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-right: auto !important;
   display: block;
+  align-self: flex-start; /* Ensures left alignment in flex columns */
 }
 
 /* Optional: Float images with #floatleft or #floatright in markdown */

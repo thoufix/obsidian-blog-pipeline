@@ -15,8 +15,3 @@ canonifyURLs = true
   [params.logo]
     logoText = "$ cd ~/blog"
     logoHomeLink = "/"
-
-[module]
-  [[module.mounts]]
-    source = "../content"
-    target = "content"
