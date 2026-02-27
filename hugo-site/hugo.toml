@@ -11,6 +11,7 @@ canonifyURLs = true
   showMenuItems = 2
   fullWidthTheme = true
   centerTheme = false
+  customCSS = ["css/custom.css"]
 
   [params.logo]
     logoText = "$ cd ~/blog"
