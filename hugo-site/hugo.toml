@@ -13,5 +13,5 @@ canonifyURLs = true
   centerTheme = false
 
   [params.logo]
-    logoText = "$ cd ~/blog"
+    logoText = "$ cd ~/blog --canary"
     logoHomeLink = "/"

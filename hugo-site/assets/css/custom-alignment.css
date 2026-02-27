@@ -1,0 +1,23 @@
+/* Custom Image Alignment - v5 (Hugo Assets) */
+.post-content img, 
+.post-content figure img {
+  max-width: 600px !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  display: block !important;
+  align-self: flex-start !important;
+}
+
+/* Ensure the wrapping paragraph or parent container doesn't center the image */
+.post-content p,
+.post-content div {
+  text-align: left !important;
+}
+
+/* Force reset on any centering classes the theme might be using */
+img.center, 
+figure.center {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
