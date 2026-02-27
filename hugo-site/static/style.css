@@ -1,7 +1,28 @@
-/* Limit image max width to 600px and align left */
+/* Image styling - v2 */
 img {
   max-width: 600px !important;
   width: auto !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  display: block;
+}
+
+/* Optional: Float images with #floatleft or #floatright in markdown */
+img[src$='#floatleft'] {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+img[src$='#floatright'] {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Clear floats after content */
+.post-content::after {
+  content: "";
+  display: table;
+  clear: both;
 }
