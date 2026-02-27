@@ -10,7 +10,7 @@ def get_platform_config():
             'posts_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\content\posts",
             'attachments_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\content\posts",
             'static_images_dir': r"D:\Sandbox\Dev\obsidian-blog-pipeline\hugo-site\static\images",
-            'newline': '\n'
+            'newline': '\r\n'  # Windows line endings
         }
     else:  # Linux (Raspberry Pi)
         return {
