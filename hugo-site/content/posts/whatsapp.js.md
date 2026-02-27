@@ -104,7 +104,7 @@ weight: 9999
 | Audio alerts for blind users | Use `espeak` or text-to-speech mp3 + send |
 | Offline fallback             | Cache menu or use file-based backup       |
 
-![[architecture.png]]
+![architecture.png](/images/architecture.png)
 
 ---
 ```

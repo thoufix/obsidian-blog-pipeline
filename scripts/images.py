@@ -33,8 +33,8 @@ def process_images():
     processed_files = 0
     total_images = 0
     image_patterns = [
-        (r'!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|webp|svg))\]\]', 'obsidian'),  # Obsidian style
-        (r'!\[[^\]]*\]\(([^\)]+\.(?:png|jpg|jpeg|gif|webp|svg))\)', 'markdown')  # Standard markdown
+        (r'!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|webp|svg))\]\]', 'obsidian'),
+        (r'!\[[^\]]*\]\(([^\)]+\.(?:png|jpg|jpeg|gif|webp|svg))\)', 'markdown')
     ]
 
     for filename in os.listdir(config['posts_dir']):
@@ -47,7 +47,6 @@ def process_images():
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
 
-        original_content = content
         changes_made = False
 
         for pattern, pattern_type in image_patterns:
@@ -55,16 +54,12 @@ def process_images():
                 image = match.group(1)
                 print(f"  Found {pattern_type} image reference: {image}")
 
-                # Handle different path formats
                 if pattern_type == 'markdown':
-                    # Extract just the filename from path
                     image = os.path.basename(image)
 
-                # Create Hugo-compatible link
                 encoded_image = quote(image)
                 hugo_image = f"![{image}](/images/{encoded_image})"
 
-                # Replace based on pattern type
                 if pattern_type == 'obsidian':
                     content = content.replace(f"![[{image}]]", hugo_image)
                 else:
@@ -74,31 +69,30 @@ def process_images():
                         content
                     )
 
-                # Copy image to static directory
                 image_source = os.path.join(config['attachments_dir'], image)
                 image_dest = os.path.join(config['static_images_dir'], image)
 
                 if os.path.exists(image_source):
                     try:
                         shutil.copy2(image_source, image_dest)
-                        print(f"    ✓ Copied: {image}")
+                        print(f"    [OK] Copied: {image}")
                         total_images += 1
                         changes_made = True
                     except Exception as e:
-                        print(f"    ✗ Error copying {image}: {str(e)}")
+                        print(f"    [ERR] Error copying {image}: {str(e)}")
                 else:
-                    print(f"    ✗ Image not found: {image_source}")
+                    print(f"    [ERR] Image not found: {image_source}")
 
         if changes_made:
             with open(filepath, "w", encoding="utf-8", newline=config['newline']) as file:
                 file.write(content)
-            print(f"  ✓ Updated markdown file")
+            print(f"  [OK] Updated markdown file")
             processed_files += 1
         else:
             print("  No image changes needed")
 
     print("\n" + "-" * 50)
-    print(f"Processing complete!")
+    print("Processing complete!")
     print(f"Markdown files processed: {processed_files}")
     print(f"Images copied: {total_images}")
     print("\nNext steps:")
@@ -108,4 +102,3 @@ def process_images():
 
 if __name__ == "__main__":
     process_images()
-
