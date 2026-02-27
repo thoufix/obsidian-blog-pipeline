@@ -1,11 +1,12 @@
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import unquote
 
-CONTENT_DIR = Path("content")
+CONTENT_DIR = Path("hugo-site/content/posts")
 
 def normalize_filename(name):
-    name = name.replace("%20", " ")
+    name = unquote(name)  # decode %20
     name = name.replace(" ", "-")
     return name.lower()
 
@@ -17,12 +18,13 @@ def process_markdown(md_path):
     obsidian_matches = re.findall(r'!\[\[([^\]]+)\]\]', text)
 
     for image in obsidian_matches:
-        image_path = md_path.parent / image
+        decoded = unquote(image)
+        image_path = md_path.parent / decoded
 
         if not image_path.exists():
             continue
 
-        new_name = normalize_filename(image_path.name)
+        new_name = normalize_filename(decoded)
         new_path = md_path.parent / new_name
 
         if image_path != new_path:
@@ -35,10 +37,11 @@ def process_markdown(md_path):
     md_matches = re.findall(r'!\[[^\]]*\]\(([^)]+)\)', text)
 
     for image in md_matches:
-        image_path = md_path.parent / image
+        decoded = unquote(image)
+        image_path = md_path.parent / decoded
 
         if image_path.exists():
-            new_name = normalize_filename(image_path.name)
+            new_name = normalize_filename(decoded)
             new_path = md_path.parent / new_name
 
             if image_path != new_path:
