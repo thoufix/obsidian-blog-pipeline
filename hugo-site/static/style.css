@@ -1,11 +1,22 @@
-/* Image styling - v3 */
-img {
+/* Image styling - v4 - Ultra Specificity */
+.post-content img {
   max-width: 600px !important;
   width: auto !important;
   margin-left: 0 !important;
   margin-right: auto !important;
-  display: block;
-  align-self: flex-start; /* Ensures left alignment in flex columns */
+  display: block !important;
+  align-self: flex-start !important;
+}
+
+/* Ensure the wrapping paragraph doesn't center the image */
+.post-content p {
+  text-align: left !important;
+}
+
+/* Fix for figures if Hugo renders them */
+.post-content figure {
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
 /* Optional: Float images with #floatleft or #floatright in markdown */
