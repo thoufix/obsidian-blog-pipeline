@@ -8,12 +8,12 @@ tags:
   - backup
 ---
 
-# ðŸŽ¥ MPV Configuration
+# 🎥 MPV Configuration
 
-## ðŸ“„ `mpv.conf`
+## 🔄 `mpv.conf`
 
 ```ini
-# â–¶ï¸ Playback Settings
+# ▶️¸ Playback Settings
 vo=gpu-next                  # Modern GPU output for better speed
 hwdec=auto-safe               # Use hardware decoding if possible
 profile=fast
@@ -22,7 +22,7 @@ video-sync=display-resample
 interpolation=yes
 
 # ================================
-# ðŸ” Caching
+# 🔁 Caching
 # ================================
 cache=yes
 cache-secs=30
@@ -32,7 +32,7 @@ demuxer-readahead-secs=10
 stream-buffer-size=32768
 
 # ================================
-# ðŸ“º YouTube High Quality
+# 📺 YouTube High Quality
 # ================================
 ytdl-format=bestvideo[vcodec^=av01]+bestaudio/bestvideo[vcodec^=vp9]+bestaudio/best
 
@@ -51,7 +51,7 @@ ytdl-raw-options=\
 network-timeout=15
 
 # ================================
-# ðŸ“ Subtitles
+# 📝 Subtitles
 # ================================
 sub-auto=no
 sub-ass-override=force
@@ -64,7 +64,7 @@ sub-shadow-offset=0
 sub-margin-y=15
 
 # ================================
-# ðŸ–¥ï¸ Interface
+# 🖥️¸ Interface
 # ================================
 osc=no
 save-position-on-quit=yes
@@ -77,7 +77,7 @@ keepaspect=yes
 autofit=960x540
 
 # ================================
-# ðŸ› ï¸ Logging
+# 🛠️ Logging
 # ================================
 osd-bar=yes
 osd-on-seek=msg-bar
@@ -96,7 +96,7 @@ cursor-autohide-fs-only=no
 
 ---
 
-## ðŸŽ® `input.conf` â€“ Key Bindings
+## 🎮 `input.conf` – Key Bindings
 
 ```conf
 # Disable default behavior for 'r'
@@ -114,23 +114,23 @@ e script-binding stats/display-stats
 E script-binding stats/display-stats-toggle
 ```
 
-ðŸ’¡ Useful when watching portrait videos or debugging with stats overlay.
+💡 Useful when watching portrait videos or debugging with stats overlay.
 
 ---
 
-## ðŸ—‚ Folder Backup
+## 🗂 Folder Backup
 
 Path: `C:\Users\AI\AppData\Roaming\mpv`
 
-- âœ… `mpv.conf` â€“ Settings
-- âœ… `input.conf` â€“ Custom keybindings
-- âœ… `scripts/` â€“ Lua or JS extensions
-- âœ… `script-opts/` â€“ Script-specific configs
-- âœ… `fonts/` â€“ Fonts for OSD/subtitles
+- ✅ `mpv.conf` – Settings
+- ✅ `input.conf` – Custom keybindings
+- ✅ `scripts/` – Lua or JS extensions
+- ✅ `script-opts/` – Script-specific configs
+- ✅ `fonts/` – Fonts for OSD/subtitles
 
 ---
 
-## ðŸ”„ Backup Instructions
+## 🔄 Backup Instructions
 
 1. Open PowerShell
 2. Run:
