@@ -1,6 +1,6 @@
 ---
 title: animal review
-date: 2025-07-18
+date: 2026-02-28
 summary: this is a review of animal movie released in 2023
 tags:
   - movie
