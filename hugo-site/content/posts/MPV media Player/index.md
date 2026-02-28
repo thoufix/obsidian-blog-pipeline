@@ -1,4 +1,4 @@
----
+﻿---
 title: mpv.io (Media Player)
 date: 2025-07-10
 summary: MPV config + keybindings backup
