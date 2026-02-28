@@ -10,10 +10,10 @@ tags:
 
 # 🎥 MPV Configuration
 
-## 🔄 `mpv.conf`
+## 📄 `mpv.conf`
 
 ```ini
-# ▶️¸ Playback Settings
+# ▶️ Playback Settings
 vo=gpu-next                  # Modern GPU output for better speed
 hwdec=auto-safe               # Use hardware decoding if possible
 profile=fast
@@ -64,7 +64,7 @@ sub-shadow-offset=0
 sub-margin-y=15
 
 # ================================
-# 🖥️¸ Interface
+# 🖥️ Interface
 # ================================
 osc=no
 save-position-on-quit=yes
