@@ -1,4 +1,4 @@
-﻿---
+---
 title: Pilab Blog Pipeline Architecture
 date: 2026-02-26
 summary: Fully automated CI/CD pipeline for a personal blog using Obsidian, GitHub, Woodpecker CI, Hugo, Nginx, and Cloudflare Tunnel on a Raspberry Pi 5
@@ -13,7 +13,7 @@ tags:
   - obsidian
 ---
 
-## ðŸ§­ Overview
+## 🧭 Overview
 
 This project implements a fully automated CI/CD pipeline for a personal blog using:
 
@@ -29,56 +29,54 @@ Everything is self-hosted on `pilab` (Raspberry Pi 5) and exposed securely via C
 
 ---
 
-## ðŸ— High-Level Architecture Flow
+## 🏗 High-Level Architecture Flow
 
 ```
-
 Obsidian (Windows)  
-â”‚  
-â”‚ Auto Commit + Push  
-â–¼  
+│  
+│ Auto Commit + Push  
+▼  
 GitHub Repository  
-â”‚  
-â”‚ Webhook (push event)  
-â–¼  
+│  
+│ Webhook (push event)  
+▼  
 Woodpecker CI (Docker on Pi)  
-â”‚  
-â”‚ Clone Repo  
-â–¼  
+│  
+│ Clone Repo  
+▼  
 Hugo Build (ARM64 container)  
-â”‚  
-â”‚ Generate static site  
-â–¼  
+│  
+│ Generate static site  
+▼  
 /srv/blog/releases/TIMESTAMP/  
-â”‚  
-â”‚ ln -sfn (symlink swap)  
-â–¼  
+│  
+│ ln -sfn (symlink swap)  
+▼  
 /srv/blog/current (Active Symlink)  
-â”‚  
-â–¼  
+│  
+▼  
 Nginx Container (blog-web)  
-â”‚  
-â–¼  
+│  
+▼  
 Cloudflare Tunnel (cloudflared)  
-â”‚  
-â–¼  
+│  
+▼  
 Cloudflare Edge (SSL)  
-â”‚  
-â–¼  
-ðŸŒ [https://blog.pilab.space](https://blog.pilab.space/)
+│  
+▼  
+🌍 [https://blog.pilab.space](https://blog.pilab.space/)
 
 ```
 
 ---
 
-## ðŸ”„ Detailed Execution Flow
+## 🔄 Detailed Execution Flow
 
-### 1ï¸âƒ£ Writing Phase
+### 1️⃣ Writing Phase
 
 Blog posts written in Obsidian, markdown files saved under:
 
 ```
-
 hugo-site/content/posts/
 
 ```
@@ -86,14 +84,13 @@ hugo-site/content/posts/
 Obsidian Git plugin performs:
 
 ```
+pull → commit → push
 
-pull â†’ commit â†’ push
-
-````
+```
 
 ---
 
-### 2ï¸âƒ£ GitHub Phase
+### 2️⃣ GitHub Phase
 
 - GitHub receives push
 - Webhook triggers:  
@@ -101,7 +98,7 @@ pull â†’ commit â†’ push
 
 ---
 
-### 3ï¸âƒ£ CI Phase (Woodpecker)
+### 3️⃣ CI Phase (Woodpecker)
 
 Woodpecker detects `.woodpecker.yml`, clones repo at commit SHA, and executes the pipeline.
 
@@ -132,18 +129,18 @@ steps:
         fi
       - ln -sfn $RELEASE_DIR /srv/blog/current
       - ls -dt /srv/blog/releases/* | tail -n +6 | xargs rm -rf
-````
+```
 
 ---
 
-### 4ï¸âƒ£ Deployment Phase (Capistrano-Style Release)
+### 4️⃣ Deployment Phase (Capistrano-Style Release)
 
 1. New release directory created:  
-    `/srv/blog/releases/YYYYMMDD-HHMMSS/`
+   `/srv/blog/releases/YYYYMMDD-HHMMSS/`
     
 2. Hugo output copied into it
     
-3. `index.html` validated â€” if missing, release is deleted and pipeline aborts
+3. `index.html` validated — if missing, release is deleted and pipeline aborts
     
 4. `ln -sfn` atomically swaps `/srv/blog/current` to new release
     
@@ -158,40 +155,40 @@ ln -sfn /srv/blog/releases/YYYYMMDD-HHMMSS /srv/blog/current
 
 ---
 
-### 5ï¸âƒ£ Serving Phase
+### 5️⃣ Serving Phase
 
 Nginx serves static files from `/srv/blog/current` on port 80 internally.  
 No public ports exposed.
 
 ---
 
-### 6ï¸âƒ£ Ingress Phase
+### 6️⃣ Ingress Phase
 
 Cloudflare Tunnel forwards `blog.pilab.space` to the internal Nginx container.  
 Cloudflare handles SSL termination.
 
 ---
 
-## ðŸ–¥ Infrastructure Layout (Pi)
+## 🖥 Infrastructure Layout (Pi)
 
 ```
 Raspberry Pi 5 (pilab)
-â”‚
-â”œâ”€â”€ woodpecker-server
-â”œâ”€â”€ woodpecker-agent
-â”œâ”€â”€ blog-web (nginx)
-â”œâ”€â”€ cloudflared
-â””â”€â”€ /srv/blog/
-    â”œâ”€â”€ current -> releases/YYYYMMDD-HHMMSS/
-    â””â”€â”€ releases/
-        â”œâ”€â”€ 20260226-120000/
-        â”œâ”€â”€ 20260225-184500/
-        â””â”€â”€ ...
+│
+├── woodpecker-server
+├── woodpecker-agent
+├── blog-web (nginx)
+├── cloudflared
+└── /srv/blog/
+    ├── current -> releases/YYYYMMDD-HHMMSS/
+    └── releases/
+        ├── 20260226-120000/
+        ├── 20260225-184500/
+        └── ...
 ```
 
 ---
 
-## ðŸ” Security Model
+## 🔐 Security Model
 
 - No direct IPv4/IPv6 exposure
     
@@ -206,7 +203,7 @@ Raspberry Pi 5 (pilab)
 
 ---
 
-## âš™ Obsidian Git Configuration
+## ⚙ Obsidian Git Configuration
 
 ```
 Auto pull interval:    5 minutes
@@ -218,7 +215,7 @@ Split timers:          Enabled
 
 ---
 
-## ðŸ§  Design Principles
+## 🧠 Design Principles
 
 - **GitHub** = Source of Truth
     
@@ -235,7 +232,7 @@ Split timers:          Enabled
 
 ---
 
-## ðŸš€ What This Achieves
+## 🚀 What This Achieves
 
 - Fully automated blog publishing
     
@@ -250,9 +247,9 @@ Split timers:          Enabled
 
 ---
 
-## ðŸ“Œ Definition
+## 📌 Definition
 
--  A GitOps-based, ARM-native, zero-trust, Capistrano-style static release system.
+- A GitOps-based, ARM-native, zero-trust, Capistrano-style static release system.
     
 ---
 
