@@ -2,7 +2,7 @@
 title: OpenClaw notes
 date: 2026-03-03
 summary: Check Qwen token usage?
-series: pilab
+series: AI
 tags:
   - raspberry-pi
   - openclaw
