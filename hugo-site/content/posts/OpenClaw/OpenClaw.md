@@ -4,13 +4,8 @@ date: 2026-03-03
 summary: Check Qwen token usage?
 series: pilab
 tags:
-  - woodpecker
-  - hugo
-  - nginx
-  - cloudflare
   - raspberry-pi
-  - ci-cd
-  - obsidian
+  - openclaw
 ---
 
  1. Rate limit / Quota exhausted — You've used up your free tier tokens for this hour/day. Logging in again won't fix this — you need to wait for the quota to reset.
