@@ -9,4 +9,4 @@ series: movies
 
 ## the problem
 
-this is not even a movie, this is  a shit 
+this is not even a movie, this is  a shit ; the pace and the ideology and the theme and all the characters written are exposes the directors male chauvinism 
