@@ -63,7 +63,7 @@ tags:
 ### System
 
 - **OS:** Debian GNU/Linux 12 (Bookworm)
-- **Kernel:** 6.12.62+rpt-rpi-2712
+- **Kernel:** `<redacted>`
 - **Temperature:** 52.1°C
 
 ### Running Containers (20)
@@ -78,7 +78,7 @@ tags:
 
 ## pico — Raspberry Pi 4
 
-> **Local IP:** `10.1.1.144` | **WireGuard IP:** `10.10.0.4` | **SSH:** `ssh pico` (key: `pico_ed25519`)
+> **Local IP:** `10.1.1.144` | **WireGuard IP:** `10.10.0.4` | **SSH:** `ssh pico` (key: `<redacted>`)
 
 ### CPU
 
@@ -109,7 +109,7 @@ tags:
 ### System
 
 - **OS:** Debian GNU/Linux 13 (Trixie)
-- **Kernel:** 6.12.62+rpt-rpi-v8
+- **Kernel:** `<redacted>`
 - **Temperature:** 42.8°C
 
 ### Running Containers (8)
@@ -122,7 +122,7 @@ tags:
 
 ## Oracle VPS — Cloud VM
 
-> **Public IP:** `140.245.244.98` | **WireGuard IP:** `10.10.0.1` | **Internal:** `10.0.0.251`
+> **Public IP:** `<redacted>` | **WireGuard IP:** `10.10.0.1` | **Internal:** `10.0.0.251`
 >
 > **Provider:** Oracle Cloud Infrastructure (OCI) — Always Free tier
 
@@ -154,18 +154,18 @@ tags:
 ### System
 
 - **OS:** Ubuntu 22.04.5 LTS (Jammy Jellyfish)
-- **Kernel:** 6.8.0-1044-oracle
+- **Kernel:** `<redacted>`
 
 ### Services
 
 - **WireGuard Hub:** `wg0` — hub for all peers (pilab, pico, Windows PC)
-- **Caddy:** Reverse proxy + SSL termination for all `*.pilab.space` domains
+- **Caddy:** Reverse proxy + SSL termination for all public domains
 
 ---
 
 ## OpenWrt Router — TP-Link Archer AX23 v1
 
-> **IP:** `10.1.1.1` | **SSH:** `ssh root@10.1.1.1` (passwordless)
+> **IP:** `10.1.1.1` | **SSH:** `ssh root@10.1.1.1`
 
 ### CPU
 
@@ -206,7 +206,7 @@ tags:
 
 ## stellarhost — GCP VM
 
-> **Public IP:** `34.30.244.13` | **SSH:** `thoufics@34.30.244.13` (key: `id_ed25519_gcp`)
+> **Public IP:** `<redacted>` | **SSH:** `<redacted>` (key: `<redacted>`)
 >
 > **Provider:** Google Cloud Platform (GCP)
 
